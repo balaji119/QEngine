@@ -10,9 +10,21 @@ namespace QEngine
     {
         static void Main(string[] args)
         {
-            Run(args[0], args[1]);
+            try
+            {
+                Run(args[0], args[1]);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
+        /// <summary>
+        /// Loads the given file and executes commands continuously untill user quits.
+        /// </summary>
+        /// <param name="filePath">CSV file which is to be represented as database</param>
+        /// <param name="tableName">Name of the database table</param>
         static void Run(string filePath, string tableName)
         {
             var lines = File.ReadLines(filePath);
@@ -29,6 +41,7 @@ namespace QEngine
                 {
                     Console.WriteLine(item);
                 }
+                Console.WriteLine();
             }
         }
     }
