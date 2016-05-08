@@ -1,0 +1,10 @@
+*.suo
+*.pdb
+*.user
+**/Debug/
+**/Release
+**/Intermediate
+**/Executables
+*.opensdf
+*.exe
+*.csproject.user
